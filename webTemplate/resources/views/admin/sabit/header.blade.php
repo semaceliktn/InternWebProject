@@ -68,7 +68,6 @@
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
                         <x-responsive-nav-link :href="route('logout')"
                                                onclick="event.preventDefault();
                                         this.closest('form').submit();">
@@ -82,9 +81,3 @@
 </header>
 
 
-<form method="post" action="{{route('logout')}}">
-    @csrf
-    <a href="{{route('logout')}}" onclick="event.PrevenetDefault();this.closest('form').submit()">
-        çıkış
-    </a>
-</form>
