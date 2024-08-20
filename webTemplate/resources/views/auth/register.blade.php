@@ -44,28 +44,28 @@
 
                         <div class="form-group mb-3 row">
                             <div class="col-12">
-                                <input class="form-control" type="text" name="name" required="" placeholder="Name">
+                                <input id="name" class="form-control" type="text" name="name" required="" placeholder="Name">
                                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
                             </div>
                         </div>
 
                         <div class="form-group mb-3 row">
                             <div class="col-12">
-                                <input class="form-control" type="email" name="email" required="" placeholder="Email">
+                                <input id="email" class="form-control" type="email" name="email" required="" placeholder="Email">
                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
                         </div>
 
                         <div class="form-group mb-3 row">
                             <div class="col-12">
-                                <input class="form-control" type="password" name="password" required="" placeholder="Password">
+                                <input id="password" class="form-control" type="password" name="password" required="" placeholder="Password">
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
                         </div>
 
                         <div class="form-group mb-3 row">
                             <div class="col-12">
-                                <input class="form-control" type="password" name="password_confirmation" required="" placeholder="Confirm Password">
+                                <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required="" placeholder="Confirm Password">
                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                             </div>
                         </div>
