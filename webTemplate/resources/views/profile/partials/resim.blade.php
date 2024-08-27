@@ -4,23 +4,25 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+                <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
 
                  <div class="row mb-3">
                     <label for="example-text-input" class="col-sm-2 ">Resim</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="file" placeholder="bootstrap@example.com" id="resim">
+                        <input class="form-control" type="file" name="resim" id="resim">
                     </div>
                  </div>
 
                  <div class="row mb-3">
                     <label for="example-text-input" class="col-sm-2 "></label>
                     <div class="col-sm-10">
-                        <img class="rounded avatar-lg" src="" alt="" id="resimGoster">
+                        <img class="rounded avatar-lg" src=" {{ (!empty( Auth::user()->resim )) ? url('upload/admin/'.Auth::user()->resim)
+                        : url('upload/EKLENMEDİ.jpg') }} " alt="" id="resimGoster">
                     </div>
                  </div>
+                 <label for="example-text-input" class="col-sm-2 "></label>
                  <input type="submit" class="btn  btn-dark" value="Update Image" >
                 </form>
 
@@ -34,7 +36,7 @@
      $('#resim').change(function(e){
         var reader = new FileReader();
         reader.onload = function(e){
-            $('#resimgoster').attr( 'src',e.target .result);
+            $('#resimGoster').attr( 'src',e.target .result);
         }
         reader.readAsDataURL(e.target.files['0']);
      });

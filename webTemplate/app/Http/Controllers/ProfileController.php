@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,6 +32,22 @@ class ProfileController extends Controller
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
+
+
+        //resim yükle
+
+        $id= Auth::user()->id;
+        $bilgi= User::find($id);
+
+        if ($request->file('resim')){
+            $resim= $request->file('resim');
+            $resimadi= date('ymdHi').$resim->getClientOriginalName();
+            $resim->move(public_path('upload/admin'),$resimadi);
+            $bilgi['resim']=$resimadi;
+        }
+        $bilgi->save();
+
+        //resim yükle
 
         $request->user()->save();
 
