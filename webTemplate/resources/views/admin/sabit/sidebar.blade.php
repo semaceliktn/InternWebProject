@@ -4,11 +4,11 @@
 
         <!-- User details -->
         <div class="user-profile text-center mt-3">
-            <div class="">
-                <img src="{{asset('backend/assets/images/users/avatar-1.jpg')}}" alt="" class="avatar-md rounded-circle">
+            <div class="" style="margin-left: 75px">
+                <img src="{{ !empty(Auth::user()->resim) ? url('upload/admin/'. Auth::user()->resim) : asset('upload/EKLENMEDİ.jpg') }}" alt="" class="avatar-md rounded-circle">
             </div>
             <div class="mt-3">
-                <h4 class="font-size-16 mb-1">Julia Hudda</h4>
+                <h4 class="font-size-16 mb-1">{{Auth::user()->name}}</h4>
                 <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
             </div>
         </div>
