@@ -49,9 +49,17 @@ class ProfileController extends Controller
 
         //resim yükle
 
+
+        //Bildirim
+        $mesaj = array(
+            'bildirim'=> 'Güncelleme başarılı.',
+            'alert-type'=>'success'
+        );
+        //Bildirim
+
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit')->with('status', 'profile-updated')->with($mesaj);
     }
 
     /**
@@ -72,6 +80,13 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to('/');
+        //Bildirim
+        $mesaj = array(
+            'bildirim'=> 'Hesap kalıcı olarak silindi.',
+            'alert-type'=>'error'
+        );
+        //Bildirim
+
+        return Redirect::to('/login')->with($mesaj);
     }
 }

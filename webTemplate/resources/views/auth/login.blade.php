@@ -19,6 +19,10 @@
     <!-- App Css-->
     <link href="{{asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 
+    <!-- Bildiri -->
+    <link rel="stylesheet" type="text/css"  href=" https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <!-- Bildiri -->
+
 </head>
 
 <body class="auth-body-bg">
@@ -104,6 +108,29 @@
 <script src="{{asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
 
 <script src="{{asset('backend/assets/js/app.js')}}"></script>
+
+<!-- Bildiri -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    @if(Session::has('bildirim'))
+    var type = "{{ Session::get('alert-type', 'info') }}"
+    switch(type) {
+        case 'info':
+            toastr.info("{{ Session::get('bildirim') }}");
+            break;
+        case 'success':
+            toastr.success("{{ Session::get('bildirim') }}");
+            break;
+        case 'warning':
+            toastr.warning("{{ Session::get('bildirim') }}");
+            break;
+        case 'error':
+            toastr.error("{{ Session::get('bildirim') }}");
+            break;
+    }
+    @endif
+</script>
+<!-- Bildiri -->
 
 </body>
 </html>
