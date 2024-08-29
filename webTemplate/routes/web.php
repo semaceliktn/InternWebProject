@@ -1,11 +1,20 @@
 <?php
 
+use App\Http\Controllers\Home\BannerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
+
+//Banner
+Route::controller(BannerController::class)->group(function (){
+    Route::get('/banner/duzenle','HomeBanner')->name('banner');
+});
+//Banner
+
 
 Route::get('/dashboard', function () {
     return view('admin.index');
