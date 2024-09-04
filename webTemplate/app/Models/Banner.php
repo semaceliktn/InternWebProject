@@ -9,7 +9,14 @@ class Banner extends Model
 {
     use HasFactory;
 
-    protected $quarded= [];
+    protected $fillable=[
+
+        'baslik',
+        'alt_baslik',
+        'url',
+        'video_url',
+        'resim'
+    ];
 
 
 }

@@ -12,6 +12,7 @@ Route::get('/', function () {
 //Banner
 Route::controller(BannerController::class)->group(function (){
     Route::get('/banner/duzenle','HomeBanner')->name('banner');
+    Route::post('/banner/guncelle','BannerGuncelle')->name('banner.guncelle');
 });
 //Banner
 
