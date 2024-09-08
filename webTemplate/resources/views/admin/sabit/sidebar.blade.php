@@ -36,7 +36,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
                            <li><a href="{{ route('kategori.hepsi')}} ">All</a></li>
-                           <li><a href="layouts-hori-boxed-width.html">Add Category</a></li>
+                           <li><a href="{{route('kategori.ekle')}}">Add Category</a></li>
                         </li>
                     </ul>
                 </li>

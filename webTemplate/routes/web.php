@@ -20,6 +20,8 @@ Route::controller(BannerController::class)->group(function (){
 //Category
 Route::controller(CategoryController::class)->group(function (){
     Route::get('/kategori/hepsi','KategoriHepsi')->name('kategori.hepsi');
+    Route::get('/kategori/ekle','KategoriEkle')->name('kategori.ekle');
+    Route::post('/kategori/ekle/form','KategoriEkleForm')->name('kategori.ekle.form');
 });
 //Category
 

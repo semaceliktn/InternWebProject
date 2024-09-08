@@ -42,7 +42,7 @@
                                     <tr>
                                         <td>{{$s++}}</td>
                                         <td>{{$kategoriler->kategori_adi}}</td>
-                                        <td>{{$kategoriler->resim}}</td>
+                                        <td> <img src="{{asset($kategoriler->resim)}}" style="height:50px;width: 50px"></td>
                                         <td>İşlem</td>
                                     </tr>
                                     </tbody>
