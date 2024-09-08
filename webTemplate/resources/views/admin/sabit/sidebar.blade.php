@@ -31,6 +31,24 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-layout-3-line"></i>
+                        <span>Categories</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                           <li><a href="{{ route('kategori.hepsi')}} ">All</a></li>
+                           <li><a href="layouts-hori-boxed-width.html">Add Category</a></li>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
                         <span>Layouts</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
