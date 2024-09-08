@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Home\BannerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,12 @@ Route::controller(BannerController::class)->group(function (){
     Route::post('/banner/guncelle','BannerGuncelle')->name('banner.guncelle');
 });
 //Banner
+
+//Category
+Route::controller(CategoryController::class)->group(function (){
+    Route::get('/kategori/hepsi','KategoriHepsi')->name('kategori.hepsi');
+});
+//Category
 
 
 Route::get('/dashboard', function () {
