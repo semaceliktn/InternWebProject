@@ -12,7 +12,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 
 class BannerController extends Controller
 {
-    public function Homebanner(){
+    public function HomeBanner(){
         $homebanner= Banner::find(1);
         return view('admin.anasayfa.banner_duzenle',compact('homebanner'));
 
