@@ -168,6 +168,31 @@ class CategoryController extends Controller
 
     }//fonksiyon bitti
 
+    public function KategoriSil($id){
+
+        $kategori_id= Category::findOrFail($id);
+
+        //klasörden resmin silinmesi
+        if (file_exists($kategori_id->resim)){
+            $resim= $kategori_id->resim;
+            unlink($resim);
+        }
+        //klasörden resmin silinmesi
+
+        Category::findOrFail($id)->delete();
+
+        $mesaj=array(
+            'bildirim'=>'Silme başarılı.',
+            'alert-type'=>'success'
+        );
+
+
+        return Redirect()->back()->with($mesaj);
+
+
+
+    }//fonksiyon bitti
+
 
 
 

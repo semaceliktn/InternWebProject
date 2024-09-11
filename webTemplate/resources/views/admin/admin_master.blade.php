@@ -76,7 +76,11 @@
 <!-- Right bar overlay-->
 <div class="rightbar-overlay"></div>
 
-<!-- JAVASCRIPT -->
+<!--Sweet Alert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{asset('backend/assets/js/sweet.js')}}"></script>
+<!--Sweet Alert -->
+
 <script src="{{asset('backend/assets/libs/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
@@ -133,9 +137,9 @@
     }
     @endif
 </script>
-
-
 <!-- Bildiri -->
+
+
 
 
 </body>

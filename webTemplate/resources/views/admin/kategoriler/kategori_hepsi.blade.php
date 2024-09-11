@@ -44,8 +44,11 @@
                                         <td>{{$kategoriler->kategori_adi}}</td>
                                         <td> <img src="{{(!empty($kategoriler->resim)) ? url($kategoriler->resim) : url('upload/EKLENMEDİ.jpg')}}" style="height:50px;width: 50px"></td>
                                         <td>
-                                            <a href="{{route('kategori.duzenle',$kategoriler->id)}}" class="btn btn-info sm mt-2">
+                                            <a href="{{route('kategori.duzenle',$kategoriler->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
                                                 <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="{{route('kategori.sil',$kategoriler->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
+                                                <i class="fa fa-trash-alt"></i>
                                             </a>
                                         </td>
                                     </tr>

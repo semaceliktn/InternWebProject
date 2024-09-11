@@ -24,6 +24,7 @@ Route::controller(CategoryController::class)->group(function (){
     Route::post('/kategori/ekle/form','KategoriEkleForm')->name('kategori.ekle.form');
     Route::get('/kategori/duzenle/{id}','KategoriDuzenle')->name('kategori.duzenle');
     Route::post('/kategori/guncelle/form','KategoriGuncelleForm')->name('kategori.guncelle.form');
+    Route::get('/kategori/sil/{id}', 'KategoriSil')->name('kategori.sil');
 });
 //Category
 
