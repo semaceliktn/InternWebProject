@@ -186,10 +186,7 @@ class CategoryController extends Controller
             'alert-type'=>'success'
         );
 
-
         return Redirect()->back()->with($mesaj);
-
-
 
     }//fonksiyon bitti
 
