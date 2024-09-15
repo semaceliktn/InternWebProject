@@ -44,7 +44,7 @@ class CategoryController extends Controller
 
             $manager= new ImageManager(new Driver());
             $img= $manager->read($resim);
-            $img= $img->resize('700',400);
+            $img= $img->resize(700,400);
             $img->toJpeg(80)->save(public_path('upload/kategori/'.$resimAdi));
             $resim_kaydet= 'upload/kategori/'.$resimAdi;
 

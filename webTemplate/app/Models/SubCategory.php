@@ -10,4 +10,9 @@ class SubCategory extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+    public function iliskiCategory(){
+        return $this->belongsTo(Category::class,'kategori_id','id');
+    }
+
 }

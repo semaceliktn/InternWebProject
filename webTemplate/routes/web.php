@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Home\BannerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,6 +29,14 @@ Route::controller(CategoryController::class)->group(function (){
 });
 //Category
 
+//Subcategory
+Route::controller(SubCategoryController::class)->group(function (){
+    Route::get('/altkategori/liste','AltkategoriListe')->name('altkategori.liste');
+    Route::get('/altkategori/ekle','AltkategoriEkle')->name('altkategori.ekle');
+    Route::post('/altkategori/ekle/form','AltkategoriEkleForm')->name('altkategori.ekle.form');
+
+});
+//Subcategory
 
 Route::get('/dashboard', function () {
     return view('admin.index');

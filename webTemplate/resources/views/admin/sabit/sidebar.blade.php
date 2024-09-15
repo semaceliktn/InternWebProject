@@ -41,11 +41,24 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Sub Categories</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                        <li><a href="{{ route('altkategori.liste')}} ">List</a></li>
+                        <li><a href="{{route('altkategori.ekle')}}">Add Subcategory</a></li>
+                        </li>
+                    </ul>
+                </li>
 
 
 
 
 
+<!--
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-layout-3-line"></i>
@@ -235,6 +248,7 @@
                 </li>
 
             </ul>
+            -->
         </div>
         <!-- Sidebar -->
     </div>
