@@ -34,6 +34,9 @@ Route::controller(SubCategoryController::class)->group(function (){
     Route::get('/altkategori/liste','AltkategoriListe')->name('altkategori.liste');
     Route::get('/altkategori/ekle','AltkategoriEkle')->name('altkategori.ekle');
     Route::post('/altkategori/ekle/form','AltkategoriEkleForm')->name('altkategori.ekle.form');
+    Route::get('/altkategori/duzenle/{id}','AltkategoriDuzenle')->name('altkategori.duzenle');
+    Route::post('/altkategori/guncelle/form','AltkategoriGuncelleForm')->name('altkategori.guncelle.form');
+    Route::get('/altkategori/sil/{id}', 'AltkategoriSil')->name('altkategori.sil');
 
 });
 //Subcategory

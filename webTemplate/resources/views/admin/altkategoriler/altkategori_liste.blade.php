@@ -42,14 +42,14 @@
                                     <tbody>
                                     <tr>
                                         <td>{{$s++}}</td>
-                                        <td> {{ $altkategori['iliskiCategory']['kategori_adi'] }} </td>
+                                        <td> {{$altkategori->iliskiCategory->kategori_adi }} </td>
                                         <td>{{$altkategori->altkategori_adi}}</td>
                                         <td> <img src="{{(!empty($altkategori->resim)) ? url($altkategori->resim) : url('upload/EKLENMEDİ.jpg')}}" style="height:50px;width: 50px"></td>
                                         <td>
-                                            <a href="{{route('kategori.duzenle',$altkategori->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
+                                            <a href="{{route('altkategori.duzenle',$altkategori->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{route('kategori.sil',$altkategori->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
+                                            <a href="{{route('altkategori.sil',$altkategori->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
                                                 <i class="fa fa-trash-alt"></i>
                                             </a>
                                         </td>
