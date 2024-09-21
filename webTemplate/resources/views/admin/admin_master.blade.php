@@ -145,7 +145,29 @@
 <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
 <!-- Boş olamaz validate -->
 
+<!-- Aktif Pasif Durum Alanı-->
 
+<script>
+
+    $(function (){
+        $('.urunler').change(function (){
+            var durum= $(this).prop('checked') == true ? 1 : 0;
+            var urun_id=$(this).data('id');
+
+            $.ajax({
+                type:"GET",
+                dataType:"json",
+                url:'/urun/durum',
+                data:{ 'durum':durum, 'urun_id':urun_id },
+                success: function (data){
+                    console.log(data.success)
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Aktif Pasif Durum Alanı-->
 
 
 

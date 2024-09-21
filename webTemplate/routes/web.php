@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Home\BannerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,6 +41,14 @@ Route::controller(SubCategoryController::class)->group(function (){
 
 });
 //Subcategory
+
+//Product
+Route::controller(ProductController::class)->group(function (){
+    Route::get('/urun/liste','UrunListe')->name('urun.liste');
+    Route::get('/urun/durum','UrunDurum');
+});
+
+//Product
 
 Route::get('/dashboard', function () {
     return view('admin.index');
