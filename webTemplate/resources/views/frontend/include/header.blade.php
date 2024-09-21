@@ -13,14 +13,27 @@
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
                                     <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="about.html">Kurumsal</a></li>
                                     <li><a href="services-details.html">Services</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Portfolio</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                        </ul>
-                                    </li>
+
+                                    @php
+                                        $kategoriler=\App\Models\Category::orderBy('kategori_adi','ASC')->limit(3)->get();
+                                    @endphp
+
+
+                                    @foreach($kategoriler as $kategori)
+                                        <li class="menu-item-has-children"><a href="#">{{$kategori->kategori_adi}}</a>
+                                            @php
+                                            $altkategoriler=App\Models\SubCategory::where('kategori_id',$kategori->id)->orderBy('altkategori_adi','ASC')->get();
+                                            @endphp
+                                            <ul class="sub-menu">
+                                                @foreach($altkategoriler as $altkategori)
+                                                    <li><a href="portfolio.html">{{ $altkategori->altkategori_adi }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @endforeach
+
                                     <li class="menu-item-has-children"><a href="#">Our Blog</a>
                                         <ul class="sub-menu">
                                             <li><a href="blog.html">Our News</a></li>
