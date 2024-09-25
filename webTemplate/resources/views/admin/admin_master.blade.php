@@ -29,6 +29,9 @@
     <!-- Bildiri -->
     <link rel="stylesheet" type="text/css"  href=" https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <!-- Bildiri -->
+    <!-- Tag -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+    <!-- Tag -->
 </head>
 
 <body data-topbar="dark">
@@ -146,7 +149,6 @@
 <!-- Boş olamaz validate -->
 
 <!-- Aktif Pasif Durum Alanı-->
-
 <script>
 
     $(function (){
@@ -166,8 +168,11 @@
         });
     });
 </script>
-
 <!-- Aktif Pasif Durum Alanı-->
+
+<!--Tag-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+<!--Tag-->
 
 
 

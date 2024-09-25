@@ -166,9 +166,7 @@ class SubCategoryController extends Controller
             //bildirim
 
             return redirect()->route('altkategori.liste')->with($mesaj);
-
         }
-
     }//fonksiyon bitti
 
 
@@ -189,10 +187,13 @@ class SubCategoryController extends Controller
             'bildirim'=>'Silme başarılı.',
             'alert-type'=>'success'
         );
-
         return Redirect()->back()->with($mesaj);
-
     }//fonksiyon bitti
+
+    public function AltAjax($kategori_id){
+        $altgetir= SubCategory::where('kategori_id',$kategori_id)->orderBy('altkategori_adi','ASC')->get();
+        return response()->json($altgetir);
+    }
 
 
 

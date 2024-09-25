@@ -62,7 +62,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
                         <li><a href="{{ route('urun.liste')}} ">List</a></li>
-                        <li><a href="{{route('altkategori.ekle')}}">Add Subcategory</a></li>
+                        <li><a href="{{route('urun.ekle')}}">Add Product</a></li>
                         </li>
                     </ul>
                 </li>

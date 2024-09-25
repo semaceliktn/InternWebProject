@@ -38,6 +38,7 @@ Route::controller(SubCategoryController::class)->group(function (){
     Route::get('/altkategori/duzenle/{id}','AltkategoriDuzenle')->name('altkategori.duzenle');
     Route::post('/altkategori/guncelle/form','AltkategoriGuncelleForm')->name('altkategori.guncelle.form');
     Route::get('/altkategori/sil/{id}', 'AltkategoriSil')->name('altkategori.sil');
+    Route::get('/altkategoriler/ajax/{kategori_id}', 'AltAjax');
 
 });
 //Subcategory
@@ -45,9 +46,9 @@ Route::controller(SubCategoryController::class)->group(function (){
 //Product
 Route::controller(ProductController::class)->group(function (){
     Route::get('/urun/liste','UrunListe')->name('urun.liste');
+    Route::get('/urun/ekle','UrunEkle')->name('urun.ekle');
     Route::get('/urun/durum','UrunDurum');
 });
-
 //Product
 
 Route::get('/dashboard', function () {
