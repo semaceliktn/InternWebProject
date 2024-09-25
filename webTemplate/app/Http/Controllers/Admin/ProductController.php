@@ -147,12 +147,27 @@ class ProductController extends Controller
             //bildirim
 
             return redirect()->route('urun.liste')->with($mesaj);
-
-
         } //end else
-
-
     }//fonksiyon bitti
+
+    public function UrunSil($id){
+        $urun_id= Product::findOrFail($id);
+
+        //klasörden resim silme
+        $resim= $urun_id->resim;
+        if(file_exists($resim)){
+            unlink($resim);
+        }// end if
+        //klasörden resim silme
+
+        Product::findOrFail($id)->delete();
+
+        $mesaj=array(
+            'bildirim'=>'Silme işlemi başarılı.',
+            'alert-type'=>'success'
+        );
+        return redirect()->route('urun.liste')->with($mesaj);
+    } //fonksiyon bitti
 
 
 }

@@ -49,6 +49,7 @@ Route::controller(ProductController::class)->group(function (){
     Route::post('/urun/ekle/form','UrunEkleForm')->name('urun.ekle.form');
     Route::get('/urun/duzenle/{id}','UrunDuzenle')->name('urun.duzenle');
     Route::post('/urun/guncelle/form','UrunGuncelleForm')->name('urun.guncelle.form');
+    Route::get('/urun/sil/{id}', 'UrunSil')->name('urun.sil');
     Route::get('/urun/durum','UrunDurum');
 });
 //Product
