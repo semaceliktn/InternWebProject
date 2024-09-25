@@ -15,4 +15,8 @@ class Product extends Model
     public function Altkategori(){
         return $this->belongsTo(SubCategory::class,'altkategori_id','id');
     }//fonksiyon bitti
+
+    public function Kategoriler(){
+        return $this->belongsTo(Category::class, 'kategori_id','id');
+    }//fonksiyon bitti
 }
