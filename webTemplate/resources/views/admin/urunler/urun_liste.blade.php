@@ -50,7 +50,7 @@
                                             <a href="{{route('urun.duzenle',$urunler->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{route('altkategori.sil',$urunler->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
+                                            <a href="{{route('urun.sil',$urunler->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
                                                 <i class="fa fa-trash-alt"></i>
                                             </a>
                                         </td>
