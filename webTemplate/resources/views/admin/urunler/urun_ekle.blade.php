@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h4 class="card-title mb-3">Ürün Ekle</h4>
 
-                            <form method="post" action="{{ route('altkategori.ekle.form') }}" class="mt-4 space-y-6" enctype="multipart/form-data" id="myForm">
+                            <form method="post" action="{{ route('urun.ekle.form') }}" class="mt-4 space-y-6" enctype="multipart/form-data" id="myForm">
                                 @csrf
                                 <div class="col-md-12">
                                     <div class="row">
@@ -70,7 +70,6 @@
                                                 <div class="col-sm-12 form-group">
                                                     <select class="form-select" aria-label="Default select example" name="altkategori_id">
                                                         <option>
-
                                                         </option>
                                                     </select>
                                                 </div>
@@ -79,7 +78,7 @@
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-form-label">Sıra No</label>
                                                 <div class="col-sm-12 form-group" >
-                                                    <input class="form-control" type="number" name="sirano" placeholder="Sıra No" >
+                                                    <input class="form-control" type="number" name="sirano" placeholder="Sıra No" value="1" >
                                                 </div>
                                             </div>
                                             <!-- end row -->
@@ -113,7 +112,7 @@
                                             <!-- end row -->
                                         </div> <!-- col-md-4 bitti -->
                                         <div class="d-flex justify-content-center">
-                                            <input type="submit" class="btn btn-dark " value="Alt Ürün Ekle">
+                                            <input type="submit" class="btn btn-dark " value="Ürün Ekle">
                                         </div>
                                     </div>
                                 </div>  <!-- col-md-12 bitti -->
@@ -144,32 +143,22 @@
         $(document).ready(function(){
             $("#myForm").validate({
                 rules:{
-                    altkategori_adi:
+                    altkategori_id:
                         {
                             required:true,
                         },
-                    anahtar:
-                        {
-                            required:true,
-                        },
-                    aciklama:
-                        {
-                            required:true,
-                        },
+                    resim:{
+                        required:true,
+                    }
                 }, //end rules
                 messages:{
-                    altkategori_adi:
+                    altkategori_id:
                         {
-                            required:'Alt kategori adı giriniz.',
+                            required:'Alt kategori boş olamaz.',
                         },
-                    anahtar:
-                        {
-                            required:'Anahtar giriniz.',
-                        },
-                    aciklama:
-                        {
-                            required:'Açıklama giriniz',
-                        },
+                    resim:{
+                        required:'Resim giriniz.',
+                    }
                 },
                 <!-- end message -->
 
@@ -202,7 +191,7 @@
     </script>
     <!--ckeditor-->
 
-
+    <!--Kategoriye göre alt kategorilerin ajax isteği ile dinamik alınması-->
     <script>
         $(document).ready(function (){
           $('select[name="kategori_id"]').on('change', function(){
@@ -226,4 +215,5 @@
           })
         })
     </script>
+    <!--Kategoriye göre alt kategorilerin ajax isteği ile dinamik alınması-->
 @endsection

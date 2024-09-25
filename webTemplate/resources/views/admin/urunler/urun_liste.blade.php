@@ -40,14 +40,14 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td> {{$urunler->baslik }} </td>
-                                        <td>Alt kategori adı</td>
+                                        <td>{{ optional($urunler->Altkategori)->altkategori_adi}}</td>
                                         <td><img src="{{ (!empty($urunler->resim)) ? url($urunler->resim): url('upload/EKLENMEDİ.jpg') }}" style="height:50px;width: 50px"></td>
                                         <td>
                                             <input type="checkbox" id="{{$urunler->id}}" class="urunler" data-id="{{$urunler->id}}" switch="success"{{$urunler->durum ? 'checked' : ''}} }}>
                                             <label for="{{$urunler->id}}" data-on-label="Yes" data-off-label="No"></label>
                                         </td>
                                         <td>
-                                            <a href="{{route('altkategori.duzenle',$urunler->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
+                                            <a href="{{route('urun.duzenle',$urunler->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <a href="{{route('altkategori.sil',$urunler->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
