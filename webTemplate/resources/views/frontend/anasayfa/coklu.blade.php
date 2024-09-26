@@ -63,7 +63,7 @@ $urunler=\App\Models\Product::where('durum',1)->orderBy('sirano','ASC')->get();
                         <div class="portfolio__active">
 
                             @php
-                            $urunkategori=App\Models\Product::where('kategori_id',$kategori->id)->orderBy('sirano','ASC')->get();
+                            $urunkategori=App\Models\Product::where('kategori_id',$kategori->id)->where('durum',1)->orderBy('sirano','ASC')->get();
                             @endphp
 
                             @forelse($urunkategori as $urunler)
