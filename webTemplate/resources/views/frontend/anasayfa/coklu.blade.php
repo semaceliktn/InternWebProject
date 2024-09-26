@@ -44,8 +44,8 @@ $urunler=\App\Models\Product::where('durum',1)->orderBy('sirano','ASC')->get();
                                 </div>
                                 <div class="portfolio__overlay__content">
                                     <span>{{ $urun->Kategoriler->kategori_adi }}</span>
-                                    <h4 class="title"><a href="portfolio-details.html">{{ $urun->baslik }}</a></h4>
-                                    <a href="portfolio-details.html" class="link">Case Study</a>
+                                    <h4 class="title"><a href="{{ url('urun/'.$urun->id.'/'.$urun->url)}}">{{ $urun->baslik }}</a></h4>
+                                    <a href="{{ url('urun/'.$urun->id.'/'.$urun->url)}}" class="link">Devamı...</a>
                                 </div>
                             </div>
                             @endforeach
@@ -73,8 +73,8 @@ $urunler=\App\Models\Product::where('durum',1)->orderBy('sirano','ASC')->get();
                                 </div>
                                 <div class="portfolio__overlay__content">
                                     <span>{{ $urunler->Kategoriler->kategori_adi }}</span>
-                                    <h4 class="title"><a href="portfolio-details.html">{{ $urunler->baslik }}</a></h4>
-                                    <a href="portfolio-details.html" class="link">Case Study</a>
+                                    <h4 class="title"><a href="{{ url('urun/'.$urunler->id.'/'.$urunler->url)}}">{{ $urunler->baslik }}</a></h4>
+                                    <a href=" {{ url('urun/'.$urunler->id.'/'.$urunler->url) }}" class="link">Devamı...</a>
                                 </div>
                             </div>
                             @empty

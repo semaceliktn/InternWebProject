@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Home\BannerController;
+use App\Http\Controllers\Home\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ProductController;
@@ -65,6 +66,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//front route
+Route::get('/urun/{id}/{url}',[FrontController::class, 'UrunDetay']);
 
 
 
