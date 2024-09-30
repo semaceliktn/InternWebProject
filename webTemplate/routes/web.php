@@ -69,6 +69,7 @@ require __DIR__.'/auth.php';
 
 //front route
 Route::get('/urun/{id}/{url}',[FrontController::class, 'UrunDetay']);
+Route::get('/kategori/{id}/{url}',[FrontController::class,'KategoriDetay']);
 
 
 
