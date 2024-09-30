@@ -28,7 +28,7 @@
                                             @endphp
                                             <ul class="sub-menu">
                                                 @foreach($altkategoriler as $altkategori)
-                                                    <li><a href="portfolio.html">{{ $altkategori->altkategori_adi }}</a></li>
+                                                    <li><a href="{{ url('altkategori/'.$altkategori->id.'/'.$altkategori->altkategori_url) }}">{{ $altkategori->altkategori_adi }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>

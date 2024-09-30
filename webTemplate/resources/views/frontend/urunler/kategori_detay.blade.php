@@ -41,7 +41,7 @@
                             <div class="col-lg-6 col-md-10">
                                 <div class="portfolio__inner__thumb">
                                     <a href="{{ url('urun/'.$urun->id.'/'.$urun->url) }}">
-                                        <img src="{{ $urun->resim }}" alt="">
+                                        <img src="{{ asset($urun->resim) }}" alt="">
                                     </a>
                                 </div>
                             </div>
