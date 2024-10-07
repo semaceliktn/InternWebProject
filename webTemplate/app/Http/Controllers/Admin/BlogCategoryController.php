@@ -50,6 +50,35 @@ class BlogCategoryController extends Controller
         return response()->json(['success' => 'Başarılı.']);
     }//fonksiyon bitti
 
+    public function BlogKategoriDuzenle($id){
+        $BlogKategoriDuzenle=BlogCategory::findOrFail($id);
+
+        return view('admin.blogkategoriler.blog_kategori_duzenle',compact('BlogKategoriDuzenle'));
+    }//fonksiyon bitti
+
+    public function BlogKategoriGuncelleForm(Request $request){
+
+        $request->validate([
+            'kategori_adi'=>'required',
+        ],[
+            'kategori_adi.required'=>'Kategori ad alanı boş bırakılamaz.',
+        ]);
+
+        $blogkategori_id= $request->id;
+
+        BlogCategory::findOrFail($blogkategori_id)->update([
+            'kategori_adi'=>$request-> kategori_adi,
+            'url'=>str()->slug($request->kategori_adi),
+            'sirano'=>$request->sirano,
+        ]);
+
+        $mesaj=array(
+            'bildirim'=>'Blog kategori güncelleme başarılı.',
+            'alert-type'=>'success'
+        );
+
+        return redirect()->route('blog.liste')->with($mesaj);
+    }//fonksiyon bitti
 
 
 

@@ -43,7 +43,7 @@
                                             <label for="{{$bloglar->id}}" data-on-label="Yes" data-off-label="No"></label>
                                         </td>
                                         <td>
-                                            <a href="{{route('urun.duzenle',$bloglar->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
+                                            <a href="{{route('blog.kategori.duzenle',$bloglar->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <a href="{{route('urun.sil',$bloglar->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
