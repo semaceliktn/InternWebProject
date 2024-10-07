@@ -170,6 +170,28 @@
 </script>
 <!-- Aktif Pasif Durum Alanı-->
 
+<!-- Aktif Pasif Durum Alanı-->
+<script>
+
+    $(function (){
+        $('.icerikler').change(function (){
+            var durum= $(this).prop('checked') == true ? 1 : 0;
+            var blog_id=$(this).data('id');
+
+            $.ajax({
+                type:"GET",
+                dataType:"json",
+                url:'/blog/kategori/durum',
+                data:{ 'durum':durum, 'blog_id':blog_id },
+                success: function (data){
+                    console.log(data.success)
+                }
+            });
+        });
+    });
+</script>
+<!-- Aktif Pasif Durum Alanı-->
+
 <!--Tag-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
 <!--Tag-->

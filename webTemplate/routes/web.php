@@ -6,6 +6,7 @@ use App\Http\Controllers\Home\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\BlogCategoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -54,6 +55,18 @@ Route::controller(ProductController::class)->group(function (){
     Route::get('/urun/durum','UrunDurum');
 });
 //Product
+
+//BlogCategory
+Route::controller(BlogCategoryController::class)->group(function (){
+    Route::get('/blog/kategori/liste','BlogListe')->name('blog.liste');
+    Route::get('/kategori/ekle','KategoriEkle')->name('kategori.ekle');
+    Route::post('/kategori/ekle/form','KategoriEkleForm')->name('kategori.ekle.form');
+    Route::get('/kategori/duzenle/{id}','KategoriDuzenle')->name('kategori.duzenle');
+    Route::post('/kategori/guncelle/form','KategoriGuncelleForm')->name('kategori.guncelle.form');
+    Route::get('/kategori/sil/{id}', 'KategoriSil')->name('kategori.sil');
+    Route::get('/blog/kategori/durum','BlogDurum');
+});
+//BlogCategory
 
 Route::get('/dashboard', function () {
     return view('admin.index');

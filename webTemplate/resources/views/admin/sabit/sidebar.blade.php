@@ -67,6 +67,19 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Blogs</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                        <li><a href="{{ route('blog.liste')}} ">List</a></li>
+                        <li><a href="{{route('urun.ekle')}}">Add Category</a></li>
+                        </li>
+                    </ul>
+                </li>
+
 
 
 
