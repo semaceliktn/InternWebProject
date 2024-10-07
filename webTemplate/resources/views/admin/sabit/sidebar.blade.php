@@ -75,7 +75,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
                         <li><a href="{{ route('blog.liste')}} ">List</a></li>
-                        <li><a href="{{route('urun.ekle')}}">Add Category</a></li>
+                        <li><a href="{{route('blog.kategori.ekle')}}">Add Category</a></li>
                         </li>
                     </ul>
                 </li>
