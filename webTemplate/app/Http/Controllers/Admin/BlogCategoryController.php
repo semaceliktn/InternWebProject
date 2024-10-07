@@ -76,11 +76,22 @@ class BlogCategoryController extends Controller
             'bildirim'=>'Blog kategori güncelleme başarılı.',
             'alert-type'=>'success'
         );
-
         return redirect()->route('blog.liste')->with($mesaj);
     }//fonksiyon bitti
 
+    public function BlogKategoriSil($id){
+
+        $blogkategori_id= BlogCategory::findOrFail($id);
+        $blogkategori_id->delete();
+
+        $mesaj=array(
+            'bildirim'=>'Blog kategori silme başarılı.',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($mesaj);
+    } //fonksiyon bitti
 
 
 
-}
+
+}//class bitti

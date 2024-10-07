@@ -62,9 +62,8 @@ Route::controller(BlogCategoryController::class)->group(function (){
     Route::get('/blog/kategori/ekle','BlogKategoriEkle')->name('blog.kategori.ekle');
     Route::post('/blog/kategori/form','BlogKategoriForm')->name('blog.kategori.form');
     Route::get('/blog/kategori/duzenle/{id}','BlogKategoriDuzenle')->name('blog.kategori.duzenle');
-
     Route::post('/blog/kategori/guncelle/form','BlogKategoriGuncelleForm')->name('blog.kategori.guncelle.form');
-    Route::get('/kategori/sil/{id}', 'KategoriSil')->name('kategori.sil');
+    Route::get('/blog/kategori/sil/{id}', 'BlogKategoriSil')->name('blog.kategori.sil');
     Route::get('/blog/kategori/durum','BlogDurum');
 });
 //BlogCategory
