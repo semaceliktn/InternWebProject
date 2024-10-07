@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <h4 class="card-title mb-3">Blog Kategori Ekle</h4>
 
-                            <form method="post" action="{{ route('blog.kategori.guncelle.form') }}" class="mt-4 space-y-6" enctype="multipart/form-data" id="myForm">
+                            <form method="post" action="{{ route('blog.kategori.form') }}" class="mt-4 space-y-6" enctype="multipart/form-data" id="myForm">
                                 @csrf
                                         <div class="row mb-3">
                                             <label for="example-text-input" class="col-form-label">Kategori Adı</label>
