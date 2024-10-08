@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\BlogContentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -67,6 +68,19 @@ Route::controller(BlogCategoryController::class)->group(function (){
     Route::get('/blog/kategori/durum','BlogDurum');
 });
 //BlogCategory
+
+//BlogContent
+Route::controller(BlogContentController::class)->group(function (){
+    Route::get('/icerik/liste','IcerikListe')->name('icerik.liste');
+    Route::get('/blog/icerik/ekle','BlogIcerikEkle')->name('blog.icerik.ekle');
+    Route::post('/blog/icerik/ekle/form','BlogIcerikEkleForm')->name('blog.icerik.ekle.form');
+    Route::get('/blog/icerik/duzenle/{id}','BlogIcerikDuzenle')->name('blog.icerik.duzenle');
+
+    Route::post('/blog/icerik/guncelle/form','BlogIcerikGuncelleForm')->name('blog.icerik.guncelle.form');
+    Route::get('/urun/sil/{id}', 'UrunSil')->name('urun.sil');
+    Route::get('/blog/icerik/durum','BlogIcerikDurum');
+});
+//BlogContent
 
 Route::get('/dashboard', function () {
     return view('admin.index');

@@ -80,6 +80,18 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Blogs Content</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                        <li><a href="{{ route('icerik.liste')}} ">List</a></li>
+                        <li><a href="{{route('blog.icerik.ekle')}}">Add Category</a></li>
+                        </li>
+                    </ul>
+                </li>
 
 
 
