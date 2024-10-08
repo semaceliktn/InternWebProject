@@ -75,8 +75,8 @@ Route::controller(BlogContentController::class)->group(function (){
     Route::get('/blog/icerik/ekle','BlogIcerikEkle')->name('blog.icerik.ekle');
     Route::post('/blog/icerik/ekle/form','BlogIcerikEkleForm')->name('blog.icerik.ekle.form');
     Route::get('/blog/icerik/duzenle/{id}','BlogIcerikDuzenle')->name('blog.icerik.duzenle');
-
     Route::post('/blog/icerik/guncelle/form','BlogIcerikGuncelleForm')->name('blog.icerik.guncelle.form');
+
     Route::get('/urun/sil/{id}', 'UrunSil')->name('urun.sil');
     Route::get('/blog/icerik/durum','BlogIcerikDurum');
 });

@@ -204,7 +204,7 @@
                 type:"GET",
                 dataType:"json",
                 url:'/blog/icerik/durum',
-                data:{ 'durum':durum, 'blog_id':blog_icerik_id },
+                data:{ 'durum':durum, 'blog_icerik_id':blog_icerik_id },
                 success: function (data){
                     console.log(data.success)
                 }
