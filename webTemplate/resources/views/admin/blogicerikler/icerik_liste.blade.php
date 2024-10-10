@@ -40,7 +40,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td> {{$icerikler->baslik }} </td>
-                                        <!-- <td>{{ optional($icerikler->Altkategori)->altkategori_adi}}</td> -->
+                                        <td>{{ $icerikler->IliskiBlogCategory->kategori_adi}}</td>
                                         <td><img src="{{ (!empty($icerikler->resim)) ? url($icerikler->resim): url('upload/EKLENMEDİ.jpg') }}" style="height:50px;width: 50px"></td>
                                         <td>
                                             <input type="checkbox" id="{{$icerikler->id}}" class="metinler" data-id="{{$icerikler->id}}" switch="success"{{$icerikler->durum ? 'checked' : ''}} }}>
@@ -50,7 +50,7 @@
                                             <a href="{{route('blog.icerik.duzenle',$icerikler->id)}}" class="btn btn-info sm mt-2" title="Düzenle">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{route('urun.sil',$icerikler->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
+                                            <a href="{{route('blog.icerik.sil',$icerikler->id)}}" class="btn btn-danger sm mt-2" title="Sil" id="sil" onclick="confirmation(event)">
                                                 <i class="fa fa-trash-alt"></i>
                                             </a>
                                         </td>

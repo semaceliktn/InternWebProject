@@ -10,4 +10,8 @@ class BlogContent extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+    public function IliskiBlogCategory(){
+        return $this->belongsTo(BlogCategory::class,'kategori_id','id');
+    }
 }

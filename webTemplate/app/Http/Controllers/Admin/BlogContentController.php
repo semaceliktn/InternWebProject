@@ -148,5 +148,26 @@ class BlogContentController extends Controller
         }// end else
     }//fonksiyon bitti
 
+    public function BlogIcerikSil($id){
+        $blogicerik_id= BlogContent::findOrFail($id);
+
+        //klasörden resim siler
+        $resim= $blogicerik_id->resim;
+        if (file_exists($resim)){
+            unlink($resim);
+        }
+        //klasörden resim siler
+
+        $blogicerik_id->delete();
+
+        //bildirim
+        $mesaj=array(
+            'bildirim'=>'Silme işlemi başarılı.',
+            'alert-type'=>'success'
+        );
+        //bildirim
+        return redirect()->back()->with($mesaj);
+    }
+
 
 }//class bitti
