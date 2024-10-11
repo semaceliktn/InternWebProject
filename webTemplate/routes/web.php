@@ -97,6 +97,7 @@ require __DIR__.'/auth.php';
 Route::get('/urun/{id}/{url}',[FrontController::class, 'UrunDetay']);
 Route::get('/kategori/{id}/{url}',[FrontController::class,'KategoriDetay']);
 Route::get('/altkategori/{id}/{url}',[FrontController::class,'AltkategoriDetay']);
+Route::get('/blog/icerik/{id}/{url}',[FrontController::class,'BlogIcerikDetay']);
 
 
 

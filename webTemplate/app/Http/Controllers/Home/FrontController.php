@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlogCategory;
+use App\Models\BlogContent;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
@@ -32,5 +34,16 @@ class FrontController extends Controller
         $altkategori=SubCategory::where('id',$id)->first();
 
         return view('frontend.urunler.altkategori_detay',compact('urunler','altkategoriler','altkategori'));
+    }//fonksiyon bitti
+
+    public function BlogIcerikDetay($id,$url){
+        $icerikler=BlogContent::where('durum',1)->orderBy('sirano','ASC')->limit(5)->get();
+        $icerik=BlogContent::findOrFail($id);
+        $kategoriler=BlogCategory::where('durum',1)->orderBy('sirano','ASC')->get();
+
+        $etiket=$icerik->tag;
+        $etiketler=explode(',',$etiket);
+
+        return view('frontend.blog.blog_icerik_detay',compact('icerikler','icerik','kategoriler','etiketler'));
     }//fonksiyon bitti
 } //class bitti
