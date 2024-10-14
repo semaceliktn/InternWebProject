@@ -37,13 +37,29 @@ class FrontController extends Controller
     }//fonksiyon bitti
 
     public function BlogIcerikDetay($id,$url){
-        $icerikler=BlogContent::where('durum',1)->orderBy('sirano','ASC')->limit(5)->get();
+        $icerikHepsi=BlogContent::where('durum',1)->orderBy('sirano','ASC')->limit(5)->get();
         $icerik=BlogContent::findOrFail($id);
         $kategoriler=BlogCategory::where('durum',1)->orderBy('sirano','ASC')->get();
 
         $etiket=$icerik->tag;
         $etiketler=explode(',',$etiket);
 
-        return view('frontend.blog.blog_icerik_detay',compact('icerikler','icerik','kategoriler','etiketler'));
+        return view('frontend.blog.blog_icerik_detay',compact('icerikHepsi','icerik','kategoriler','etiketler'));
+    }//fonksiyon bitti
+
+    public function BlogKategoriDetay($id,$url){
+        $blogpost=BlogContent::where('durum',1)->where('kategori_id',$id)->orderBy('sirano','ASC')->get();
+        $blogicerikler=BlogContent::where('durum',1)->orderBy('sirano','ASC')->get();
+        $blogkategoriler=BlogCategory::where('durum',1)->orderBy('sirano','ASC')->get();
+        $blogkategori=BlogCategory::findOrFail($id);
+
+        return view('frontend.blog.blog_kategori_detay',compact('blogpost','blogicerikler','blogkategoriler','blogkategori'));
+    }//fonksiyon bitti
+
+    public function BlogHepsi(){
+        $kategoriler=BlogCategory::where('durum',1)->orderBy('sirano','ASC')->get();
+        $icerikHepsi=BlogContent::where('durum',1)->orderBy('sirano','ASC')->get();
+
+        return view('frontend.blog.blog_hepsi',compact('kategoriler','icerikHepsi'));
     }//fonksiyon bitti
 } //class bitti
