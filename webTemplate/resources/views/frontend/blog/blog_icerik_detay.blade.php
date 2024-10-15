@@ -121,10 +121,10 @@
                             </ul>
                         </div>
                         <div class="widget">
-                            <h4 class="widget-title">Categories</h4>
+                            <h4 class="widget-title">Kategoriler</h4>
                             <ul class="sidebar__cat">
                                 @foreach($kategoriler as $kategori)
-                                <li class="sidebar__cat__item"><a href="{{url('blog/kategori/'.$kategori->id.'/'.$kategori->url)}}">{{ $kategori->kategori_adi }}</a></li>
+                                <li class="sidebar__cat__item"><a href="{{url('blog/'.$kategori->id.'/'.$kategori->url)}}">{{ $kategori->kategori_adi }}</a></li>
                                 @endforeach
                             </ul>
                         </div>

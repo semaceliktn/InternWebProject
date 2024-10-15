@@ -40,7 +40,7 @@
                                             $kategoriler=App\Models\BlogCategory::where('durum',1)->orderBy('sirano','ASC')->get();
                                             @endphp
                                             @foreach($kategoriler as $kategori)
-                                                <li><a href="{{url('blog/kategori/'.$kategori->id.'/'.$kategori->url)}}">{{$kategori->kategori_adi}}</a></li>
+                                                <li><a href="{{url('blog/'.$kategori->id.'/'.$kategori->url)}}">{{$kategori->kategori_adi}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>

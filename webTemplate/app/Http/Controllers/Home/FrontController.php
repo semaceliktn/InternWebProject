@@ -48,7 +48,7 @@ class FrontController extends Controller
     }//fonksiyon bitti
 
     public function BlogKategoriDetay($id,$url){
-        $blogpost=BlogContent::where('durum',1)->where('kategori_id',$id)->orderBy('sirano','ASC')->get();
+        $blogpost=BlogContent::where('durum',1)->where('kategori_id',$id)->orderBy('sirano','ASC')->paginate(1);
         $blogicerikler=BlogContent::where('durum',1)->orderBy('sirano','ASC')->get();
         $blogkategoriler=BlogCategory::where('durum',1)->orderBy('sirano','ASC')->get();
         $blogkategori=BlogCategory::findOrFail($id);
@@ -58,7 +58,7 @@ class FrontController extends Controller
 
     public function BlogHepsi(){
         $kategoriler=BlogCategory::where('durum',1)->orderBy('sirano','ASC')->get();
-        $icerikHepsi=BlogContent::where('durum',1)->orderBy('sirano','ASC')->get();
+        $icerikHepsi=BlogContent::where('durum',1)->orderBy('sirano','ASC')->paginate(2);
 
         return view('frontend.blog.blog_hepsi',compact('kategoriler','icerikHepsi'));
     }//fonksiyon bitti

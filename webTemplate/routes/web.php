@@ -98,7 +98,7 @@ Route::get('/urun/{id}/{url}',[FrontController::class, 'UrunDetay']);
 Route::get('/kategori/{id}/{url}',[FrontController::class,'KategoriDetay']);
 Route::get('/altkategori/{id}/{url}',[FrontController::class,'AltkategoriDetay']);
 Route::get('/post/{id}/{url}',[FrontController::class,'BlogIcerikDetay']);
-Route::get('/blog/kategori/{id}/{url}',[FrontController::class,'BlogKategoriDetay']);
+Route::get('/blog/{id}/{url}',[FrontController::class,'BlogKategoriDetay']);
 Route::get('/blog',[FrontController::class,'BlogHepsi'])->name('blog.hepsi');
 
 
