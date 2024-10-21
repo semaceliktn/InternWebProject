@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('baslik')->nullable();
             $table->string('kisa_baslik')->nullable();
-            $table->string('kisa_aciklama')->nullable();
-            $table->string('aciklama')->nullable();
+            $table->text('kisa_aciklama')->nullable();
+            $table->text('aciklama')->nullable();
             $table->string('resim')->nullable();
             $table->timestamps();
         });

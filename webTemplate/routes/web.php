@@ -1,6 +1,8 @@
 <?php
 
+
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Home\AboutUsController;
 use App\Http\Controllers\Home\BannerController;
 use App\Http\Controllers\Home\FrontController;
 use App\Http\Controllers\ProfileController;
@@ -21,6 +23,12 @@ Route::controller(BannerController::class)->group(function (){
     Route::post('/banner/guncelle','BannerGuncelle')->name('banner.guncelle');
 });
 //Banner
+
+//About Us
+Route::controller(AboutUsController::class)->group(function (){
+    Route::get('hakkimizda/duzenle','HakkimizdaDuzenle')->name('hakkimizda');
+});
+//About Us
 
 //Category
 Route::controller(CategoryController::class)->group(function (){
