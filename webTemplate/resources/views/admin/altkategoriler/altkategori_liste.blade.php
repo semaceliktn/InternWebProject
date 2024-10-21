@@ -42,7 +42,7 @@
                                     <tbody>
                                     <tr>
                                         <td>{{$s++}}</td>
-                                        <td> {{$altkategori->iliskiCategory->kategori_adi }} </td>
+                                        <td> {{optional($altkategori->iliskiCategory)->kategori_adi }} </td>
                                         <td>{{$altkategori->altkategori_adi}}</td>
                                         <td> <img src="{{(!empty($altkategori->resim)) ? url($altkategori->resim) : url('upload/EKLENMEDİ.jpg')}}" style="height:50px;width: 50px"></td>
                                         <td>

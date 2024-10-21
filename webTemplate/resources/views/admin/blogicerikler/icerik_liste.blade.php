@@ -40,7 +40,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td> {{$icerikler->baslik }} </td>
-                                        <td>{{ $icerikler->IliskiBlogCategory->kategori_adi}}</td>
+                                        <td>{{ optional($icerikler->IliskiBlogCategory)->kategori_adi}}</td>
                                         <td><img src="{{ (!empty($icerikler->resim)) ? url($icerikler->resim): url('upload/EKLENMEDİ.jpg') }}" style="height:50px;width: 50px"></td>
                                         <td>
                                             <input type="checkbox" id="{{$icerikler->id}}" class="metinler" data-id="{{$icerikler->id}}" switch="success"{{$icerikler->durum ? 'checked' : ''}} }}>

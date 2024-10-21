@@ -13,7 +13,7 @@
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
                                     <li class="active"><a href="{{ url('/') }}">Anasayfa</a></li>
-                                    <li><a href="about.html">Kurumsal</a></li>
+                                    <li><a href="about.html">hakkımızda</a></li>
                                     <li><a href="services-details.html">Services</a></li>
 
                                     @php
