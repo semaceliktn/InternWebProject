@@ -73,4 +73,9 @@ class AboutUsController extends Controller
         }
 
     }//fonksiyon bitti
+
+    public function AnasayfaHakkimizda(){
+        $hakkimizda= AboutUs::find(1);
+        return view('frontend.anasayfa.hakkimizda',compact('hakkimizda'));
+    }//fonksiyon bitti
 }//class bitti
