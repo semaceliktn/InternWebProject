@@ -32,25 +32,23 @@
                                 </div>
                                 <!-- end row -->
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Açıklama</label>
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Kısa Açıklama</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="text" name="aciklama" placeholder="Açıklama" id="example-text-input" value="{{$hakkimizda->aciklama}}">
+                                        <textarea class="form-control" type="text" name="kisa_aciklama" placeholder="Kısa Açıklama" id="example-text-input">{{$hakkimizda->kisa_aciklama}}</textarea>
                                     </div>
                                 </div>
                                 <!-- end row -->
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Kısa Açıklama</label>
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Açıklama</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="text" name="kisa_aciklama" placeholder="Kısa Açıklama" id="example-text-input" value="{{$hakkimizda->kisa_aciklama}}">
+                                        <textarea class="form-control" id="editor" type="text" name="aciklama" placeholder="Açıklama">{{$hakkimizda->aciklama}}</textarea>
                                     </div>
                                 </div>
-
                                 <!-- end row -->
-
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 ">Resim</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="file" name="resim" id="resim" class="form-control">
+                                        <input type="file" name="resim" id="resim" class="form-control">
                                     </div>
                                 </div>
 
@@ -84,7 +82,17 @@
                 reader.readAsDataURL(e.target.files['0']);
             });
         });
-
     </script>
+
+    <!--ckeditor-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    <!--ckeditor-->
 
 @endsection
