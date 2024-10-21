@@ -26,7 +26,8 @@ Route::controller(BannerController::class)->group(function (){
 
 //About Us
 Route::controller(AboutUsController::class)->group(function (){
-    Route::get('hakkimizda/duzenle','HakkimizdaDuzenle')->name('hakkimizda');
+    Route::get('/hakkimizda/duzenle','HakkimizdaDuzenle')->name('hakkimizda');
+    Route::post('/hakkimizda/guncelle','HakkimizdaGuncelle')->name('hakkimizda.guncelle');
 });
 //About Us
 
