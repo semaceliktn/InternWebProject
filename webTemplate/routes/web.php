@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\BlogContentController;
 use Illuminate\Support\Facades\Route;
 
@@ -110,6 +111,14 @@ Route::get('/altkategori/{id}/{url}',[FrontController::class,'AltkategoriDetay']
 Route::get('/post/{id}/{url}',[FrontController::class,'BlogIcerikDetay']);
 Route::get('/blog/{id}/{url}',[FrontController::class,'BlogKategoriDetay']);
 Route::get('/blog',[FrontController::class,'BlogHepsi'])->name('blog.hepsi');
+
+
+//Teklif Formu Route
+Route::controller(MessageController::class)->group(function (){
+    Route::get('/iletisim','iletisim')->name('iletisim');
+});
+//Teklif Formu Route
+
 
 
 
