@@ -26,7 +26,7 @@ class MessageController extends Controller
             'telefon.required'=>'Telefon numaranızı giriniz.',
             'telefon.digits'=>'Telefon numaranız 11 haneli sayısal karakterlerden oluşmak zorundadır.',
             'konu.required'=>'Mesajınızın konusunu giriniz',
-            'mesaj.required'=>'Bırakmak istediğiniz mesajı yazınız.'
+            'mesaj.required'=>'Mesajınızı yazınız.'
         ]);
 
         Message::create($request->all());

@@ -132,7 +132,7 @@
                     },
                 telefon:
                     {
-                        required:'Telefon numaranızı giriniz',
+                        required:'Telefon numaranızı giriniz.',
                     },
                 konu:
                     {

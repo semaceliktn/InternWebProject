@@ -14,12 +14,41 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="homeContact__form">
-                        <form action="#">
-                            <input type="text" placeholder="Enter name*">
-                            <input type="email" placeholder="Enter mail*">
-                            <input type="number" placeholder="Enter number*">
-                            <textarea name="message" placeholder="Enter Massage*"></textarea>
-                            <button type="submit">Send Message</button>
+                        <form method="post" action="{{ route('teklif.form') }}" class="" id="myForm">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12 form-group mb-3">
+                                    <input type="text" name="adi" placeholder="Ad Soyad*">
+                                    @error('adi')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12 form-group mb-3">
+                                    <input type="email" name="email" placeholder="Email*">
+                                    @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12 form-group mb-3">
+                                    <input type="text" name="telefon" placeholder="Telefon*">
+                                    @error('telefon')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12 form-group mb-3">
+                                    <input type="text" name="konu" placeholder="Konu*">
+                                    @error('konu')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <textarea type="text" name="mesaj" id="message" placeholder="Mesaj*"></textarea>
+                            @error('mesaj')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+
+                            <button type="submit">Teklif Gönder</button>
                         </form>
                     </div>
                 </div>

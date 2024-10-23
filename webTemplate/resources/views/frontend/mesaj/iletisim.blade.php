@@ -72,6 +72,7 @@
                 @error('mesaj')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
+                <br>
                 <button type="submit" class="btn">Teklif Gönder</button>
             </form>
         </div>
