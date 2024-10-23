@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/default.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
+    <!-- Bildiri -->
+    <link rel="stylesheet" type="text/css"  href=" https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <!-- Bildiri -->
 </head>
 <body>
 
@@ -67,5 +70,98 @@
 <script src="{{asset('frontend/assets/js/wow.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins.js')}}"></script>
 <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+
+<!-- Bildiri -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    @if(Session::has('bildirim'))
+    var type = "{{ Session::get('alert-type', 'info') }}"
+    switch(type) {
+        case 'info':
+            toastr.info("{{ Session::get('bildirim') }}");
+            break;
+        case 'success':
+            toastr.success("{{ Session::get('bildirim') }}");
+            break;
+        case 'warning':
+            toastr.warning("{{ Session::get('bildirim') }}");
+            break;
+        case 'error':
+            toastr.error("{{ Session::get('bildirim') }}");
+            break;
+    }
+    @endif
+</script>
+<!-- Bildiri -->
+
+<!-- Boş olamaz validate -->
+<script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#myForm").validate({
+            rules:{
+                adi:
+                    {
+                        required:true,
+                    },
+                email:
+                    {
+                        required:true,
+                    },
+                telefon:
+                    {
+                        required:true,
+                    },
+                konu:
+                    {
+                        required:true,
+                    },
+                mesaj:
+                    {
+                        required:true,
+                    },
+            }, //end rules
+            messages:{
+                adi:
+                    {
+                        required:'Adınızı ve soyadınızı giriniz.',
+                    },
+                email:
+                    {
+                        required:'Emailinizi giriniz.',
+                    },
+                telefon:
+                    {
+                        required:'Telefon numaranızı giriniz',
+                    },
+                konu:
+                    {
+                        required:'Konu bilgisi giriniz.',
+                    },
+                mesaj:
+                    {
+                        required:'Mesaj giriniz.',
+                    },
+            },
+            <!-- end message -->
+
+            errorElement : 'span',
+            errorPlacement: function (error,element){
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+
+            unhighlight : function (element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+
+        });
+    });
+</script>
+<!-- Boş olamaz validate -->
 </body>
 </html>
