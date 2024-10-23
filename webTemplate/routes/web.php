@@ -116,6 +116,8 @@ Route::get('/blog',[FrontController::class,'BlogHepsi'])->name('blog.hepsi');
 //Teklif Formu Route
 Route::controller(MessageController::class)->group(function (){
     Route::get('/iletisim','iletisim')->name('iletisim');
+    Route::post('/teklif/form','TeklifFormu')->name('teklif.form');
+
 });
 //Teklif Formu Route
 

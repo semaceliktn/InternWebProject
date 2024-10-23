@@ -40,7 +40,8 @@
     <!-- contact-area -->
     <div class="contact-area">
         <div class="container">
-            <form action="#" class="contact__form">
+            <form method="post" action="{{ route('teklif.form') }}" class="contact__form">
+                @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <input type="text" name="adi" placeholder="Ad Soyad*">
@@ -67,11 +68,11 @@
                         @enderror
                     </div>
                 </div>
-                <textarea type="text" name="message" id="message" placeholder="Mesaj*"></textarea>
+                <textarea type="text" name="mesaj" id="message" placeholder="Mesaj*"></textarea>
                 @error('mesaj')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
-                <button type="submit" class="btn">Mesaj Gönder</button>
+                <button type="submit" class="btn">Teklif Gönder</button>
             </form>
         </div>
     </div>
